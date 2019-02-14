@@ -9,9 +9,13 @@ PFont font;
 float xPos = 0;
 float yPos = 0;
 int ctr = 0;
+boolean preLaunch = false;
+boolean launch = false;
 Button preLaunchButton, launchButton;
 PrintWriter output;
-String[] lines = new String[2];
+int numByte = 0;
+int force;
+int pressure = 250;
 
 void setup() { //same as arduino program
 
@@ -46,6 +50,11 @@ void setup() { //same as arduino program
   .setSize(100, 80)     // (width, height)
   .setFont(font)
   ;
+  
+  cp5.addButton("Initialize") //initialize the data coming in
+  .setPosition(10, 20)
+  .setSize(100, 20)
+  ;
 }
 
 //Lets add some functions to our buttons
@@ -54,31 +63,50 @@ void setup() { //same as arduino program
 void Pre_Launch_Ready() {
   port.write('r');
   preLaunchButton.setColorBackground(color(255, 0, 0));
+  preLaunch = true;
 }
 
 void Launch_Rocket() {
   port.write('b');
   launchButton.setColorBackground(color(255, 0, 0));
+  launch = true;
 }
 
 void reset() {
   port.write('f');
   preLaunchButton.setColorBackground(color(0, 0, 0));
   launchButton.setColorBackground(color(0, 0, 0));
-  output.close();
+  preLaunch = false;
+  launch = false;
+}
+
+void Initialize() {
+  port.write('i');
 }
 
 void serialEvent (Serial port) {
   // get the byte
   int inByte = port.read();
-  // print it:
-  println(inByte);
+  numByte++;
+  
+  if (inByte == 255) {
+    numByte = 0;
+  }
+  // write to file:
+  if (preLaunch && launch && numByte == 2) {
+    output.println(str(xPos) + "," + str(force) + "," + str(inByte));
+    pressure = height - inByte;
+  }
+  if (numByte == 2) {
+    numByte = 0;
+  }
   yPos = height - inByte;
+  force = inByte;
 }
 
 void draw () {
   stroke(#A8D9A7); //draw in a pretty color
-  line(xPos, height, xPos, yPos);
+  line(xPos, height, xPos, pressure);
   
   //give a title to window
   fill(0, 0, 0); // text color (r, g, b)
@@ -93,10 +121,10 @@ void draw () {
     // increment the horizontal position for the next reading
     xPos++;
   }
-  
-  output.println(str(xPos) + "," + str(yPos));
+   //<>//
   if (ctr == 100) {
     output.flush();
+    ctr = 0;
   }
   
   ctr++;

@@ -9,6 +9,7 @@ void setup() {
 
 bool preLaunch = false;
 bool launch = false;
+byte msg[2];
 
 void loop() {
 
@@ -33,10 +34,24 @@ void loop() {
       launch = false;
     }
 
+    if(val == 'i') {
+      Serial.write(255);
+    }
+
   }
 
-  int analogValue = analogRead(A0)/4; //divide by 4 to reduce range to 0-255
-  Serial.write(analogValue);
+  int force = analogRead(A0)/4; //divide by 4 to reduce range to 0-255
+  int pressure = analogRead(A1)/4; //reduce range to 0-255
+  /*Serial.write(force);
+  delay(5);
+  Serial.write(pressure);
+  delay(15);*/
+
+  msg[0] = force;
+  msg[1] = pressure;
+  Serial.write(msg, 2);
+  
   delay(10);
+  
 }
 
