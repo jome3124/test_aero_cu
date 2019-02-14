@@ -8,7 +8,10 @@ PFont font;
 
 float xPos = 0;
 float yPos = 0;
+int ctr = 0;
 Button preLaunchButton, launchButton;
+PrintWriter output;
+String[] lines = new String[2];
 
 void setup() { //same as arduino program
 
@@ -17,6 +20,8 @@ void setup() { //same as arduino program
   printArray(Serial.list());  //prints all available serial ports
   
   port = new Serial(this, "COM3", 9600); // have connected arduino to COMX
+  
+  output = createWriter("testing.txt");
   
   //add some buttons
   cp5 = new ControlP5(this);
@@ -60,6 +65,7 @@ void reset() {
   port.write('f');
   preLaunchButton.setColorBackground(color(0, 0, 0));
   launchButton.setColorBackground(color(0, 0, 0));
+  output.close();
 }
 
 void serialEvent (Serial port) {
@@ -87,4 +93,11 @@ void draw () {
     // increment the horizontal position for the next reading
     xPos++;
   }
+  
+  output.println(str(xPos) + "," + str(yPos));
+  if (ctr == 100) {
+    output.flush();
+  }
+  
+  ctr++;
 }
