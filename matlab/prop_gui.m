@@ -81,6 +81,7 @@ function pre_launch_button_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 fprintf(handles.s, 'b');
+gather_data(handles.s);
 
 
 % --- Executes on button press in launch_rocket_button.
