@@ -9,7 +9,7 @@ void setup() {
 
 bool preLaunch = false;
 bool launch = false;
-byte msg[2];
+byte msg[6];
 
 void loop() {
 
@@ -47,11 +47,16 @@ void loop() {
   Serial.write(pressure);
   delay(15);*/
 
-  msg[0] = force;
-  msg[1] = pressure;
-  Serial.write(msg, 2);
+  long time = 123456;
+  msg[0] = time/1000/60;
+  msg[1] = (time - msg[0]*1000*60) / 1000;
+  msg[2] = (time - msg[0]*1000*60 - msg[1]*1000) / 4;
+  msg[3] = 254;
+  msg[4] = pressure;
+  msg[5] = 255;
+  Serial.write(msg, 8);
   
-  delay(10);
+  delay(20);
   
 }
 

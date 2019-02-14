@@ -1,5 +1,7 @@
 import controlP5.*;
 import processing.serial.*;
+import java.util.Date;
+import java.nio.*;
 
 Serial port;
 
@@ -16,6 +18,9 @@ PrintWriter output;
 int numByte = 0;
 int force;
 int pressure = 250;
+Date date = new Date();
+long time, initTime;
+byte[] inBuf = new byte[6];
 
 void setup() { //same as arduino program
 
@@ -25,7 +30,9 @@ void setup() { //same as arduino program
   
   port = new Serial(this, "COM3", 9600); // have connected arduino to COMX
   
-  output = createWriter("testing.txt");
+  output = createWriter(System.getProperty("user.home") + "/Desktop/testing.txt");
+  
+  initTime = date.getTime();
   
   //add some buttons
   cp5 = new ControlP5(this);
@@ -55,6 +62,11 @@ void setup() { //same as arduino program
   .setPosition(10, 20)
   .setSize(100, 20)
   ;
+  
+  //give a title to window
+  fill(0, 0, 0); // text color (r, g, b)
+  textFont(font);
+  text("Arduino Rocket GUI", 300, 30); //("text", x coordninate, y coordinate)
 }
 
 //Lets add some functions to our buttons
@@ -84,7 +96,7 @@ void Initialize() {
   port.write('i');
 }
 
-void serialEvent (Serial port) {
+/*void serialEvent (Serial port) {
   // get the byte
   int inByte = port.read();
   numByte++;
@@ -92,9 +104,12 @@ void serialEvent (Serial port) {
   if (inByte == 255) {
     numByte = 0;
   }
+  
   // write to file:
   if (preLaunch && launch && numByte == 2) {
-    output.println(str(xPos) + "," + str(force) + "," + str(inByte));
+    date = new Date();
+    time = date.getTime() - initTime;
+    output.println(str(int(time)) + "," + str(force) + "," + str(inByte));
     pressure = height - inByte;
   }
   if (numByte == 2) {
@@ -102,17 +117,21 @@ void serialEvent (Serial port) {
   }
   yPos = height - inByte;
   force = inByte;
-}
+}*/
 
 void draw () {
+  while(port.available() > 0) {
   stroke(#A8D9A7); //draw in a pretty color
-  line(xPos, height, xPos, pressure);
+  line(xPos, height, xPos, height - pressure);
   
-  //give a title to window
-  fill(0, 0, 0); // text color (r, g, b)
-  textFont(font);
-  text("Arduino Rocket GUI", 300, 30); //("text", x coordninate, y coordinate)
-  
+    inBuf = port.readBytes(6);
+    if (inBuf.length == 6) {
+      if (inBuf[5] == -1) {
+        int tmp = inBuf[3] & 0xFF;
+        output.println(str(inBuf[0]) + "," + str(inBuf[1]) + "," + str(inBuf[2]) + "," + str(tmp) + "," + str(inBuf[4]) + "," + str(inBuf[5])); //<>//
+      }
+    }
+    
   if (xPos == width) {
     xPos = 0;
     // clear the screen by resetting the background
@@ -121,11 +140,12 @@ void draw () {
     // increment the horizontal position for the next reading
     xPos++;
   }
-   //<>//
+   
   if (ctr == 100) {
     output.flush();
     ctr = 0;
   }
   
   ctr++;
+  }
 }
