@@ -54,7 +54,7 @@ void loop() {
   msg[3] = 254;
   msg[4] = pressure;
   msg[5] = 255;
-  Serial.write(msg, 8);
+  Serial.write(msg, 6);
   
   delay(20);
   

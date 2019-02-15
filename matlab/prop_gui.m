@@ -55,6 +55,9 @@ function prop_gui_OpeningFcn(hObject, eventdata, handles, varargin)
 % Choose default command line output for prop_gui
 handles.output = hObject;
 handles.s = serial('COM3');
+handles.pre_launch = false;
+handles.launch_rocket = false;
+handles.fname = './test.csv';
 fopen(handles.s);
 
 % Update handles structure
@@ -81,7 +84,10 @@ function pre_launch_button_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 fprintf(handles.s, 'b');
-gather_data(handles.s);
+handles.pre_launch = true;
+gather_data(handles);
+guidata(hObject, handles);
+
 
 
 % --- Executes on button press in launch_rocket_button.
@@ -90,6 +96,8 @@ function launch_rocket_button_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 fprintf(handles.s, 'r');
+handles.launch_rocket = true;
+guidata(hObject, handles);
 
 
 % --- Executes on button press in reset_button.
@@ -106,4 +114,3 @@ function initialize_button_Callback(hObject, eventdata, handles)
 % hObject    handle to initialize_button (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-gather_data(handles.s);
