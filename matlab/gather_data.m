@@ -1,27 +1,35 @@
 function rv = gather_data(handles)
 
 fname = handles.fname;
-xlswrite(fname, {'Time [ms]', 'Force [Nm]', 'Pressure [kPa]'});
+%xlswrite(fname, {'Time [ms]', 'Force [Nm]', 'Pressure [kPa]'});
+delete(fname);
 k = 1;
-time = zeros(1,100);
-force = zeros(1,100);
-pressure = zeros(1,100);
-while (true)
-    data = fscanf(handles.s, 'uint8', 60);
+ctr = 0;
+total_data = zeros(1,1);
+
+x = .00001;
+while (x < 1e-3)
+    tic
+    data = fscanf(handles.s, '%e', 60);
+    x = toc;
+end
+
+while (ctr < 10000)
+    data = fscanf(handles.s, '%e', 60);
+    if length(data) ~= 60
+        continue
+    end
     data = uint8(data);
     plot(data);drawnow
-    
-    for j = 1:10
-        time((k-1)*10+j) = data((j-1)*6+1)*1000*60 + data((j-1)*6+2)*1000 + data((j-1)*6+3)*4;
-        force((k-1)*10+j) = data((j-1)*6+4);
-        pressure((k-1)*10+j) = data((j-1)*6+5);
-    end
-    if (k == 100)
-        dlmwrite(fname, [time' force' pressure'], 'delimiter', ',', '-append');
-        k = 1;
+    total_data((k-1)*60+1:(k-1)*60+60) = data;
+
+    if (k == 10)
+        dlmwrite(fname, total_data, 'delimiter', ',', '-append');
+        k = 0;
     end
     
     k = k+1;
+    ctr = ctr+1;
 end
 
 
