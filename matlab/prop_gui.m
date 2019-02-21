@@ -55,6 +55,7 @@ function prop_gui_OpeningFcn(hObject, eventdata, handles, varargin)
 % Choose default command line output for prop_gui
 handles.output = hObject;
 handles.s = serial('COM3');
+handles.s.Terminator = '0';
 handles.pre_launch = false;
 handles.launch_rocket = false;
 handles.fname = './test.csv';
