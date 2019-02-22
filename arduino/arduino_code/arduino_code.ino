@@ -43,16 +43,8 @@ void loop() {
 
   int force = analogRead(A0)/4; //divide by 4 to reduce range to 0-255
   int pressure = analogRead(A1)/4; //reduce range to 0-255
-  /*Serial.write(force);
-  delay(5);
-  Serial.write(pressure);
-  delay(15);*/
 
   long time = millis()+65536;
-  //long time = 266;
-  //msg[0] = time/1000/60;
-  //msg[1] = (time - msg[0]*1000*60) / 1000;
-  //msg[2] = (time - msg[0]*1000*60 - msg[1]*1000) / 4;
   msg[0] = time;
   msg[1] = time >> 8;
   msg[2] = time >> 16;

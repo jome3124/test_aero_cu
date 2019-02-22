@@ -24,7 +24,6 @@ while ctr <= floor(length(data)/6)
     sec(ctr) = str2num(seconds);
     mil(ctr) = str2num(milli_sec);
     alignment(ctr) = data((ctr-1)*6+6);
-    %time(ctr) = data((ctr-1)*6+1)*1000*60 + data((ctr-1)*6+2)*1000 + data((ctr-1)*6+3)*4;
     tmp = bin2dec(strcat(milli_sec, seconds, minutes));
     time(ctr) = tmp;
     force(ctr) = data((ctr-1)*6+4);
@@ -32,8 +31,7 @@ while ctr <= floor(length(data)/6)
     ctr = ctr+1;
 end
 
-% csvwrite('newtest.csv', [time' force' pressure' minutes' seconds' milli_sec']);
-dlmwrite('newtest.csv', [time' force' pressure' min' sec' mil'], 'delimiter', ',', 'precision', 9);
+dlmwrite('newtest.csv', [time' force' pressure'], 'delimiter', ',', 'precision', 9);
 
 end
 
