@@ -8,7 +8,7 @@ function [Ab,Vb] = burn_geometry2(r,h,rb)
         Ab = 0; % [m^2] 
     else % there is grain remaining
         %% BURN AREA, X PROJECTION
-        Abx = pi()*r^2 - (1/2*pi()*rb^2); % [m^2] burn area, x projection
+        Abx = pi()*r^2 - (pi()*rb^2); % [m^2] burn area, x projection
 
         %% BURN AREA, Y PROJECTION 
         Aby = (h-rb) * (2*pi()*rb); % [m^2] burn area, y projection

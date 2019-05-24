@@ -19,6 +19,8 @@ r_throat = 0.123/2; % [in] throat radius
 r_exit = 0.231/2; % [in] exit radius
 Mass = 0.030; % [kg]
 
+
+
 %% CONVERSION
 h_grain = h_grain*0.0254; % [m] motor grain height
 r_grain = r_grain*0.0254; % [m] motor grain radius
@@ -35,11 +37,11 @@ AR_sup = A_exit/A_throat; % supersonic area ratio
 V_burn = 0; % [m^3]
 j = 1;
 while rb < r_grain && rb < h_grain % while there is grain remaining
-    [A_burn(j), V_burn(j+1)] = burn_geometry(r_grain,h_grain,rb); % [m] burn area, burn cavity volume
+    [A_burn(j), V_burn(j+1)] = burn_geometry2(r_grain,h_grain,rb); % [m] burn area, burn cavity volume
     Pc(j) = ((a * rho_p * A_burn(j) * cstar) / (A_throat)).^((1)/(1-n))/1e6; % [MPa] chamber pressure
     burn_rate(j) = a*(Pc(j)*10^6)^n; % [m/s] burn rate
     rb = rb + burn_rate(j) * t_step; % [m] updates burn displacement
-    
+
     delta_Vol = (V_burn(j+1) - V_burn(j))/t_step; % [m^3/s] rate of change in burn cavity volume 
     [T_predicted(j),cstar,m_dot(j)] = thrust_calc(P_atm, Pc(j), A_exit, rho_p, burn_rate(j), A_burn(j), AR_sup, delta_Vol);
     cstar = cstar*cstar_eff; % [m/s]
