@@ -11,6 +11,10 @@ bool preLaunch = false;
 bool launch = false;
 byte msg[6];
 int ctr = 1;
+int R1 = 122; // [ohm]
+int R2 = 122; // [ohm]
+int v_strain, v_ref, v_press, r_strain, r_press; // [V], [ohm]
+int R4 = 122; // [ohm]
 
 void loop() {
 
@@ -39,20 +43,31 @@ void loop() {
       Serial.write(255);
     }
 
-  }
+  
+  if(val == 's') {
+  v_strain = analogRead(A0) * 3.3/1024;
+  v_ref = analogRead(A1) * 3.3/1024;
+  v_press = analogRead(A2) * 3.3/1024;
 
-  int force = analogRead(A0)/4; //divide by 4 to reduce range to 0-255
-  int pressure = analogRead(A1)/4; //reduce range to 0-255
+  //compute the resistance of the strain gauge
+  r_strain = ((R4*v_strain/v_ref) + (R2*R4/(R1+R2))) / (1-v_strain/v_ref-R2/(R1+R2));
+  r_press = v_press / 3.3 * 255;
+  //r_strain = 69;
+  //r_press = 169;
 
   long time = millis()+65536;
   msg[0] = time;
   msg[1] = time >> 8;
   msg[2] = time >> 16;
-  msg[3] = force;
-  msg[4] = pressure;
+  msg[3] = r_strain;
+  msg[4] = r_press;
+  //msg[5] = v_press;
   msg[5] = 255;
+  //msg[7] = 255;
   Serial.write(msg, 6);
   
-  delay(8);
+  delay(5);
+  }
+  }
 }
 

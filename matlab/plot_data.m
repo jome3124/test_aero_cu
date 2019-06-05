@@ -12,9 +12,9 @@ data = csvread(fname);
 time = data(:,1);
 force = data(:,2);
 pressure = data(:,3);
-min = data(:,4);
-sec = data(:,5);
-mil = data(:,6);
+% min = data(:,4);
+% sec = data(:,5);
+% mil = data(:,6);
 
 %plot it
 figure();
