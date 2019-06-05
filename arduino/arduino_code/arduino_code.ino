@@ -9,8 +9,14 @@ void setup() {
 
 bool preLaunch = false;
 bool launch = false;
+int k = 0;
+byte thrust[10000];
+byte pressure[10000];
+byte time1[10000];
+byte time2[10000];
+byte time3[10000];
+byte check[10000];
 byte msg[6];
-int ctr = 1;
 
 void loop() {
 
@@ -26,6 +32,7 @@ void loop() {
     if(val == 'r') {   //if r is received
       digitalWrite(11, HIGH); //turn on red led
       launch = true;
+      k=0;
     }
 
     if(val == 'f') {
@@ -41,18 +48,43 @@ void loop() {
 
   }
 
-  int force = analogRead(A0)/4; //divide by 4 to reduce range to 0-255
-  int pressure = analogRead(A1)/4; //reduce range to 0-255
+  if (launch == true) {
+    digitalWrite(10, HIGH);
+    digitalWrite(11, HIGH);
+    int force = analogRead(A0)/4; //divide by 4 to reduce range to 0-255
+    int onePressure = analogRead(A1)/4; //reduce range to 0-255
 
-  long time = millis()+65536;
-  msg[0] = time;
-  msg[1] = time >> 8;
-  msg[2] = time >> 16;
-  msg[3] = force;
-  msg[4] = pressure;
-  msg[5] = 255;
-  Serial.write(msg, 6);
-  
-  delay(8);
+    long time = millis()+65536;
+    time1[k] = time;
+    time2[k] = time >> 8;
+    time3[k] = time >> 16;
+    thrust[k] = force;
+    pressure[k] = onePressure;
+    check[k] = 255;
+    //Serial.write(msg, 6);
+    k++;
+    delay(1);
+
+    if (k == 500) { //wait .5 seconds before sending the fire command
+      digitalWrite(12, HIGH); //write pin 12 as high to trigger the launch
+      digitalWrite(10, LOW);
+    }
+
+    if (k == 2000) { // the firing is over, set booleans to false to disarm the system
+      preLaunch = false;
+      launch = false;
+
+      //after system is disarmed, send the data over serial to matlab
+      for(int j = 0; j<=k; j++) {
+        msg[0] = time1[j];
+        msg[1] = time2[j];
+        msg[2] = time3[j];
+        msg[3] = thrust[j];
+        msg[4] = pressure[j];
+        msg[5] = check[j];
+        Serial.write(msg, 6);
+        delay(10);
+      }
+    }
+  }
 }
-

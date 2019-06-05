@@ -54,7 +54,7 @@ function prop_gui_OpeningFcn(hObject, eventdata, handles, varargin)
 
 % Choose default command line output for prop_gui
 handles.output = hObject;
-handles.s = serial('COM3');
+handles.s = serial('COM10');
 handles.s.Terminator = '0';
 handles.pre_launch = false;
 handles.launch_rocket = false;
@@ -86,7 +86,7 @@ function pre_launch_button_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 fprintf(handles.s, 'b');
 handles.pre_launch = true;
-gather_data(handles);
+%gather_data(handles);
 guidata(hObject, handles);
 
 
@@ -98,6 +98,7 @@ function launch_rocket_button_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 fprintf(handles.s, 'r');
 handles.launch_rocket = true;
+gather_bulk_data(handles);
 guidata(hObject, handles);
 
 
