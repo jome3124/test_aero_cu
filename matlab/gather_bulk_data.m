@@ -9,17 +9,17 @@ total_data = zeros(1,1);
 num_points = 6;
 
 
-while (ctr < 3000)
+while (ctr < 1999)
     data = fscanf(handles.s, '%c', num_points);
     if length(data) ~= num_points
-        fprintf('dangit\n');
+        fprintf('dangit %d\n', ctr);
         continue
     end
     data = uint8(data);
     plot(data);drawnow
     total_data((k-1)*num_points+1:(k-1)*num_points+num_points) = data;
 
-    if (k == 10)
+    if (k == 100)
         dlmwrite(fname, total_data, 'delimiter', ',', '-append');
         k = 0;
     end
