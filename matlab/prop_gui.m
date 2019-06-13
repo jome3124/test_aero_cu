@@ -86,7 +86,6 @@ function pre_launch_button_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 fprintf(handles.s, 'b');
 handles.pre_launch = true;
-%gather_data(handles);
 guidata(hObject, handles);
 
 
@@ -100,6 +99,12 @@ fprintf(handles.s, 'r');
 handles.launch_rocket = true;
 gather_bulk_data(handles);
 guidata(hObject, handles);
+
+%translate the data after being captured, then reset the arduino and close
+%the connection.
+translate_data(handles);
+fprintf(handles.s, 'f');
+fclose(handles.s);
 
 
 % --- Executes on button press in reset_button.
@@ -116,4 +121,4 @@ function initialize_button_Callback(hObject, eventdata, handles)
 % hObject    handle to initialize_button (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-translate_data(handles);
+fprintf(handles.s, 'z');

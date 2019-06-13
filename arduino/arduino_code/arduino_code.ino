@@ -10,6 +10,7 @@ void setup() {
 bool preLaunch = false;
 bool launch = false;
 int k = 0;
+int offset = 0;
 byte thrust[10000];
 byte pressure[10000];
 byte time1[10000];
@@ -42,15 +43,18 @@ void loop() {
       launch = false;
     }
 
-    if(val == 'i') {
-      Serial.write(255);
+    if(val == 'z') {
+      offset = 0;
+      for(int k = 0; k<25; k++) {
+        offset += analogRead(A2)/4; // divide by 4 to reduce range to 0-255
+        delay(10);
+      }
+      analogWrite(DAC0, floor(offset/25)+5); //output the appropriate average offset value
     }
 
   }
 
   if (launch == true) {
-    digitalWrite(10, HIGH);
-    digitalWrite(11, HIGH);
     int force = analogRead(A0)/4; //divide by 4 to reduce range to 0-255
     int onePressure = analogRead(A1)/4; //reduce range to 0-255
 
@@ -67,7 +71,6 @@ void loop() {
 
     if (k == 500) { //wait .5 seconds before sending the fire command
       digitalWrite(12, HIGH); //write pin 12 as high to trigger the launch
-      digitalWrite(10, LOW);
     }
 
     if (k == 2000) { // the firing is over, set booleans to false to disarm the system
