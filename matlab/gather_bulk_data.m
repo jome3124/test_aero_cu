@@ -13,6 +13,7 @@ while (ctr < 1999)
     data = fscanf(handles.s, '%c', num_points);
     if length(data) ~= num_points
         fprintf('dangit %d\n', ctr);
+        ctr = ctr+1;
         continue
     end
     data = uint8(data);
