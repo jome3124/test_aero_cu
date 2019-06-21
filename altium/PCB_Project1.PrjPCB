@@ -72,6 +72,10 @@ GenerateClassCluster=0
 DocumentUniqueId=PCESABSD
 
 [GeneratedDocument1]
+DocumentPath=Project Outputs for PCB_Project1\Design Rule Check - rocket_project_pcb.html
+DItemRevisionGUID=
+
+[GeneratedDocument2]
 DocumentPath=Project Outputs for PCB_Project1\Sheet1.NET
 DItemRevisionGUID=
 
