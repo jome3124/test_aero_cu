@@ -55,8 +55,11 @@ void loop() {
   }
 
   if (launch == true) {
+    digitalWrite(13, true); //write digital io pin 13 to true.  This will trip a transistor to ignite the rocket
+    
     int force = analogRead(A0)/4; //divide by 4 to reduce range to 0-255, is the output from the load cell
     int onePressure = analogRead(A1)/4; //reduce range to 0-255, is the output from the pressure transducer
+
 
     long time = millis()+65536;
     time1[k] = time;
