@@ -9,7 +9,7 @@ total_data = zeros(1,1);
 num_points = 6;
 
 
-while (ctr < 1999)
+while (ctr < 7500)
     data = fscanf(handles.s, '%c', num_points);
     if length(data) ~= num_points
         fprintf('dangit %d\n', ctr);

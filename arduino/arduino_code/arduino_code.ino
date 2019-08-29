@@ -46,17 +46,17 @@ void loop() {
     if(val == 'z') {
       offset = 0;
       for(int k = 0; k<25; k++) {
-        offset += analogRead(A2)/4; // divide by 4 to reduce range to 0-255
-        delay(10);
+        offset += analogRead(A2)/4; // divide by 4 to reduce range to 0-255, this is to arduino zero
+        delay(2);
       }
-      analogWrite(DAC0, floor(offset/25)+5); //output the appropriate average offset value
+      analogWrite(DAC0, floor(offset/25)+5); //output the appropriate average offset value, this is from arduino zero
     }
 
   }
 
   if (launch == true) {
-    int force = analogRead(A0)/4; //divide by 4 to reduce range to 0-255
-    int onePressure = analogRead(A1)/4; //reduce range to 0-255
+    int force = analogRead(A0)/4; //divide by 4 to reduce range to 0-255, is the output from the load cell
+    int onePressure = analogRead(A1)/4; //reduce range to 0-255, is the output from the pressure transducer
 
     long time = millis()+65536;
     time1[k] = time;
@@ -73,7 +73,7 @@ void loop() {
       digitalWrite(12, HIGH); //write pin 12 as high to trigger the launch
     }
 
-    if (k == 2000) { // the firing is over, set booleans to false to disarm the system
+    if (k == 8000) { // the firing is over, set booleans to false to disarm the system
       preLaunch = false;
       launch = false;
 
