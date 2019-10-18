@@ -10,6 +10,7 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
+		<Item Name="compile_commands.vi" Type="VI" URL="../compile_commands.vi"/>
 		<Item Name="WindTunnel.vi" Type="VI" URL="../WindTunnel.vi"/>
 		<Item Name="Dependencies" Type="Dependencies"/>
 		<Item Name="Build Specifications" Type="Build"/>
@@ -93,6 +94,9 @@ AddOutputFilter chunkFilter
 		<Property Name="target.WebServer.ViAccess" Type="Str">+*</Property>
 		<Property Name="target.webservices.SecurityAPIKey" Type="Str">PqVr/ifkAQh+lVrdPIykXlFvg12GhhQFR8H9cUhphgg=:pTe9HRlQuMfJxAG6QCGq7UvoUpJzAzWGKy5SbZ+roSU=</Property>
 		<Property Name="target.webservices.ValidTimestampWindow" Type="Int">15</Property>
+		<Item Name="9202_conversions.vi" Type="VI" URL="../9202_conversions.vi"/>
+		<Item Name="9237_conversions.vi" Type="VI" URL="../9237_conversions.vi"/>
+		<Item Name="9239_conversions.vi" Type="VI" URL="../9239_conversions.vi"/>
 		<Item Name="Chassis" Type="cRIO Chassis">
 			<Property Name="crio.ProgrammingMode" Type="Str">express</Property>
 			<Property Name="crio.ResourceID" Type="Str">RIO0</Property>
@@ -172,6 +176,7 @@ AddOutputFilter chunkFilter
 			</Item>
 		</Item>
 		<Item Name="CRIO_main.vi" Type="VI" URL="../CRIO_main.vi"/>
+		<Item Name="translate_commands.vi" Type="VI" URL="../translate_commands.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="DAQmx Clear Task.vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/task.llb/DAQmx Clear Task.vi"/>
