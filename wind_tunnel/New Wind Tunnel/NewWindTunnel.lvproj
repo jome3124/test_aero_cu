@@ -12,7 +12,13 @@
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="compile_commands.vi" Type="VI" URL="../compile_commands.vi"/>
 		<Item Name="WindTunnel.vi" Type="VI" URL="../WindTunnel.vi"/>
-		<Item Name="Dependencies" Type="Dependencies"/>
+		<Item Name="Dependencies" Type="Dependencies">
+			<Item Name="vi.lib" Type="Folder">
+				<Item Name="Clear Errors.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Clear Errors.vi"/>
+				<Item Name="ex_CorrectErrorChain.vi" Type="VI" URL="/&lt;vilib&gt;/express/express shared/ex_CorrectErrorChain.vi"/>
+				<Item Name="subFile Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/express/express input/FileDialogBlock.llb/subFile Dialog.vi"/>
+			</Item>
+		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
 	<Item Name="NI-cRIO-9054-01E07AA5" Type="RT CompactRIO">
