@@ -1,24 +1,24 @@
 ﻿<?xml version='1.0' encoding='UTF-8'?>
 <Project Type="Project" LVVersion="19008000">
-	<Property Name="varPersistentID:{13974C00-9141-4744-B2A0-B9DC8E4F7167}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/process variable</Property>
-	<Property Name="varPersistentID:{2FAB1EFE-DA11-42A3-B9B7-031717805118}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/output</Property>
-	<Property Name="varPersistentID:{369CDBDA-9B31-4672-B598-B286093ECA44}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/manual control</Property>
-	<Property Name="varPersistentID:{5C8303A0-68EE-4C44-B1A3-835A3CE680C6}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/linearity</Property>
-	<Property Name="varPersistentID:{5E9ADFD9-87B8-4CBE-99BF-2BECCECC4B2C}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/dt (s)</Property>
-	<Property Name="varPersistentID:{6C87D899-B95E-44E3-8B6B-DFA2E044A3D5}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/proportional gain (Kc)</Property>
-	<Property Name="varPersistentID:{754A6390-C711-427F-8D12-56B938155A37}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/derivative time (Td, min)</Property>
-	<Property Name="varPersistentID:{80175BF8-4E2B-4F46-80C9-1659CE866503}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/setpoint high</Property>
-	<Property Name="varPersistentID:{84EAD8B6-95DF-49D1-AC7D-CEA7A56A9A58}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/beta</Property>
-	<Property Name="varPersistentID:{8D3C24DE-2634-4BFC-B4E0-8C754E36FAAA}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/integral time (Ti, min)</Property>
-	<Property Name="varPersistentID:{9228DC79-233C-4F32-9A8F-224730CE4D3B}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/error out</Property>
-	<Property Name="varPersistentID:{981AAE18-44CC-48D0-94A8-65BA7B2611AC}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/auto? (T)</Property>
-	<Property Name="varPersistentID:{A19FD198-064B-44CE-93BC-A27664344B29}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/dt out (s)</Property>
-	<Property Name="varPersistentID:{B1B02B3C-E052-4512-B209-DC5D1B42B197}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/setpoint low</Property>
-	<Property Name="varPersistentID:{C5FD6316-B59C-4C4F-B27F-1AE66BCA5B29}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/reinitialize? (F)</Property>
-	<Property Name="varPersistentID:{CF9BCB7C-D47E-4D2D-B36D-AE888460B43C}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/setpoint</Property>
-	<Property Name="varPersistentID:{E2C54B3E-F344-45F4-8285-31F5A38A2E43}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/error in</Property>
-	<Property Name="varPersistentID:{E35409D2-3B4D-4C2D-8097-5A6A85F628CD}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/output high</Property>
-	<Property Name="varPersistentID:{FF138EA7-9400-4B92-986F-5B8B047FE1BD}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/output low</Property>
+	<Property Name="varPersistentID:{11E6DDBA-CB5C-4892-AAE4-64E42208D212}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/integral time (Ti, min)</Property>
+	<Property Name="varPersistentID:{15BA8C50-F35E-4973-94E3-4F9196F92910}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/manual control</Property>
+	<Property Name="varPersistentID:{19AE7643-3E7C-46E4-BC52-AC414FFFD30E}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/proportional gain (Kc)</Property>
+	<Property Name="varPersistentID:{2B9F1F92-6A94-4DDC-9DAB-712078FAB195}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/output high</Property>
+	<Property Name="varPersistentID:{3514C33D-71CD-4321-AA90-15E84822A323}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/linearity</Property>
+	<Property Name="varPersistentID:{38A86413-78F1-442D-879A-823FE1BC85E1}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/dt out (s)</Property>
+	<Property Name="varPersistentID:{3CC19EC6-F241-4B80-A938-629BEC13C116}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/beta</Property>
+	<Property Name="varPersistentID:{3DE60FB1-23C2-40BF-92C5-D25735845F28}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/dt (s)</Property>
+	<Property Name="varPersistentID:{476C6017-C003-409B-94FE-433E8608E95A}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/setpoint</Property>
+	<Property Name="varPersistentID:{4AEB3713-D172-4FFA-A16B-62A7F001AC74}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/error in</Property>
+	<Property Name="varPersistentID:{6AA226C7-B7EE-43E0-BE69-99A97063BF96}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/error out</Property>
+	<Property Name="varPersistentID:{868780F7-0B57-4AEA-B4BF-56B86E9AF5CF}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/reinitialize? (F)</Property>
+	<Property Name="varPersistentID:{A60A6AEA-95A2-4669-B961-E1963F3185DF}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/auto? (T)</Property>
+	<Property Name="varPersistentID:{B0B424D9-11E1-41F5-8177-297B793303A4}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/setpoint low</Property>
+	<Property Name="varPersistentID:{CF78B0DA-C727-48E9-8405-E49424AA6A66}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/derivative time (Td, min)</Property>
+	<Property Name="varPersistentID:{D0FBD362-3498-4283-932A-A5B6D24ED9B9}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/output low</Property>
+	<Property Name="varPersistentID:{E2DBEB74-668F-4708-B0FB-2B6FBC5A9541}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/setpoint high</Property>
+	<Property Name="varPersistentID:{F1C04721-E66C-4DAF-AE02-194512870E13}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/process variable</Property>
+	<Property Name="varPersistentID:{F2496A2E-A446-46D2-9446-60A12B95C336}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/output</Property>
 	<Item Name="My Computer" Type="My Computer">
 		<Property Name="server.app.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="server.control.propertiesEnabled" Type="Bool">true</Property>
@@ -37,7 +37,7 @@
 		<Item Name="Read_Sc.vi" Type="VI" URL="../subvis/Read_Sc.vi"/>
 		<Item Name="ScanivalveClose.vi" Type="VI" URL="../subvis/ScanivalveClose.vi"/>
 		<Item Name="ScanivalveCollect.vi" Type="VI" URL="../subvis/ScanivalveCollect.vi"/>
-		<Item Name="ScanivalveInit.vi" Type="VI" URL="../ScanivalveInit.vi"/>
+		<Item Name="ScanivalveInit.vi" Type="VI" URL="../subvis/ScanivalveInit.vi"/>
 		<Item Name="Spreadsheet Write.vi" Type="VI" URL="../Spreadsheet Write.vi"/>
 		<Item Name="WindTunnel.vi" Type="VI" URL="../WindTunnel.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
