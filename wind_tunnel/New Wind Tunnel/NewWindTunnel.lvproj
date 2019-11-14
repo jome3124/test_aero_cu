@@ -246,6 +246,7 @@ AddOutputFilter chunkFilter
 			</Item>
 		</Item>
 		<Item Name="translate_commands.vi" Type="VI" URL="../translate_commands.vi"/>
+		<Item Name="zeroing_computations.vi" Type="VI" URL="../subvis/zeroing_computations.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="DAQmx Clear Task.vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/task.llb/DAQmx Clear Task.vi"/>
