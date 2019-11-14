@@ -1,24 +1,5 @@
 ﻿<?xml version='1.0' encoding='UTF-8'?>
 <Project Type="Project" LVVersion="19008000">
-	<Property Name="varPersistentID:{11E6DDBA-CB5C-4892-AAE4-64E42208D212}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/integral time (Ti, min)</Property>
-	<Property Name="varPersistentID:{15BA8C50-F35E-4973-94E3-4F9196F92910}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/manual control</Property>
-	<Property Name="varPersistentID:{19AE7643-3E7C-46E4-BC52-AC414FFFD30E}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/proportional gain (Kc)</Property>
-	<Property Name="varPersistentID:{2B9F1F92-6A94-4DDC-9DAB-712078FAB195}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/output high</Property>
-	<Property Name="varPersistentID:{3514C33D-71CD-4321-AA90-15E84822A323}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/linearity</Property>
-	<Property Name="varPersistentID:{38A86413-78F1-442D-879A-823FE1BC85E1}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/dt out (s)</Property>
-	<Property Name="varPersistentID:{3CC19EC6-F241-4B80-A938-629BEC13C116}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/beta</Property>
-	<Property Name="varPersistentID:{3DE60FB1-23C2-40BF-92C5-D25735845F28}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/dt (s)</Property>
-	<Property Name="varPersistentID:{476C6017-C003-409B-94FE-433E8608E95A}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/setpoint</Property>
-	<Property Name="varPersistentID:{4AEB3713-D172-4FFA-A16B-62A7F001AC74}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/error in</Property>
-	<Property Name="varPersistentID:{6AA226C7-B7EE-43E0-BE69-99A97063BF96}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/error out</Property>
-	<Property Name="varPersistentID:{868780F7-0B57-4AEA-B4BF-56B86E9AF5CF}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/reinitialize? (F)</Property>
-	<Property Name="varPersistentID:{A60A6AEA-95A2-4669-B961-E1963F3185DF}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/auto? (T)</Property>
-	<Property Name="varPersistentID:{B0B424D9-11E1-41F5-8177-297B793303A4}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/setpoint low</Property>
-	<Property Name="varPersistentID:{CF78B0DA-C727-48E9-8405-E49424AA6A66}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/derivative time (Td, min)</Property>
-	<Property Name="varPersistentID:{D0FBD362-3498-4283-932A-A5B6D24ED9B9}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/output low</Property>
-	<Property Name="varPersistentID:{E2DBEB74-668F-4708-B0FB-2B6FBC5A9541}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/setpoint high</Property>
-	<Property Name="varPersistentID:{F1C04721-E66C-4DAF-AE02-194512870E13}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/process variable</Property>
-	<Property Name="varPersistentID:{F2496A2E-A446-46D2-9446-60A12B95C336}" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi/PID/output</Property>
 	<Item Name="My Computer" Type="My Computer">
 		<Property Name="server.app.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="server.control.propertiesEnabled" Type="Bool">true</Property>
@@ -34,7 +15,9 @@
 		<Item Name="compile_commands.vi" Type="VI" URL="../compile_commands.vi"/>
 		<Item Name="ConnectDSA.vi" Type="VI" URL="../subvis/ConnectDSA.vi"/>
 		<Item Name="file_naming_convention.vi" Type="VI" URL="../file_naming_convention.vi"/>
+		<Item Name="PID.vi" Type="VI" URL="../subvis/PID.vi"/>
 		<Item Name="Read_Sc.vi" Type="VI" URL="../subvis/Read_Sc.vi"/>
+		<Item Name="scani_test.vi" Type="VI" URL="../scani_test.vi"/>
 		<Item Name="ScanivalveClose.vi" Type="VI" URL="../subvis/ScanivalveClose.vi"/>
 		<Item Name="ScanivalveCollect.vi" Type="VI" URL="../subvis/ScanivalveCollect.vi"/>
 		<Item Name="ScanivalveInit.vi" Type="VI" URL="../subvis/ScanivalveInit.vi"/>
@@ -222,29 +205,7 @@ AddOutputFilter chunkFilter
 				</Item>
 			</Item>
 		</Item>
-		<Item Name="CRIO_main.vi" Type="VI" URL="../CRIO_main.vi">
-			<Item Name="PID" Type="IIO Function Block">
-				<Item Name="auto? (T)" Type="Variable"/>
-				<Item Name="beta" Type="Variable"/>
-				<Item Name="derivative time (Td, min)" Type="Variable"/>
-				<Item Name="dt (s)" Type="Variable"/>
-				<Item Name="dt out (s)" Type="Variable"/>
-				<Item Name="error in" Type="Variable"/>
-				<Item Name="error out" Type="Variable"/>
-				<Item Name="integral time (Ti, min)" Type="Variable"/>
-				<Item Name="linearity" Type="Variable"/>
-				<Item Name="manual control" Type="Variable"/>
-				<Item Name="output" Type="Variable"/>
-				<Item Name="output high" Type="Variable"/>
-				<Item Name="output low" Type="Variable"/>
-				<Item Name="process variable" Type="Variable"/>
-				<Item Name="proportional gain (Kc)" Type="Variable"/>
-				<Item Name="reinitialize? (F)" Type="Variable"/>
-				<Item Name="setpoint" Type="Variable"/>
-				<Item Name="setpoint high" Type="Variable"/>
-				<Item Name="setpoint low" Type="Variable"/>
-			</Item>
-		</Item>
+		<Item Name="CRIO_main.vi" Type="VI" URL="../CRIO_main.vi"/>
 		<Item Name="translate_commands.vi" Type="VI" URL="../translate_commands.vi"/>
 		<Item Name="zeroing_computations.vi" Type="VI" URL="../subvis/zeroing_computations.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
@@ -447,6 +408,7 @@ AddOutputFilter chunkFilter
 			<Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
+			<Item Name="PID.vi" Type="VI" URL="../subvis/PID.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
