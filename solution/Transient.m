@@ -3,21 +3,21 @@ clear all
 clc
 
 t(1) = 0; % [s] initial time
-rb(1) = 0; % [m] initial burn grain displacement
+rb(1) = .215*.0254; % [m] initial burn grain displacement
 T_claimed = csvread('Thrust.csv');
 
 %% INPUTS
-cstar_eff = 0.7; % [-], cstar efficiency
+cstar_eff = 0.9; % [-], cstar efficiency
 t_step = 0.05; % [s] time step
 P_atm = 101325; % [Pa] ambient pressure
 a = 4e-6; % [-] burn rate coefficient, from RP HW11, Purdue
 n = 0.48; % [-] burn rate exponent, from RP HW11, Purdue
 cstar = 1500 * cstar_eff; % [m/s] characteristic velocity 
-h_grain = 1.915; % [in] motor grain height
-r_grain = 0.87/2; % [in] motor grain radius
-r_throat = 0.123/2; % [in] throat radius
-r_exit = 0.231/2; % [in] exit radius
-Mass = 0.030; % [kg]
+h_grain = 1.5; % [in] motor grain height
+r_grain = 0.93/2; % [in] motor grain radius
+r_throat = 0.09/2; % [in] throat radius
+r_exit = 0.2/2; % [in] exit radius
+Mass = 0.0255; % [kg]
 
 
 
@@ -65,6 +65,19 @@ ylabel('Thrust (lbf)')
 
 % trapz(t,T_predicted)
 trapz(T_claimed(:,1),T_claimed(:,2))
+
+
+fname = 'newtest.csv';
+data = csvread(fname);
+time = data(:,1) - data(1,1);
+force = data(:,2);
+cforce = force - min(force);
+cforce = cforce * 3.3/6*25/255;
+cforce(1:2900) = [];
+time(1:2900) = [];
+time = time-time(1);
+plot(time/1000, cforce)
+legend('Spec Sheet', 'Solution Code', 'Real Data');
 
 % figure
 % hold on
