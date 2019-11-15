@@ -15,13 +15,13 @@ while (x < 1e-3)
     x = toc;
 end
 
-while (ctr < 10000)
+while (ctr < 5000)
     data = fscanf(handles.s, '%c', num_points);
     if length(data) ~= num_points
         continue
     end
     data = uint8(data);
-    plot(data);drawnow
+    %plot(data);drawnow
     total_data((k-1)*num_points+1:(k-1)*num_points+num_points) = data;
 
     if (k == 10)
