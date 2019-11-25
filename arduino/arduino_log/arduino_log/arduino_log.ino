@@ -1,4 +1,4 @@
-void setup() {
+ void setup() {
 
   pinMode(10, OUTPUT); //set pin as output, blue led
   pinMode(11, OUTPUT); //set pin as output, red led
@@ -12,9 +12,7 @@ bool launch = true;
 int k = 0;
 int offset = 0;
 double thrust;
-int t;
-double pressure;
-byte msg[6];
+String out;
 
 void loop() {
 
@@ -46,7 +44,7 @@ void loop() {
         offset += analogRead(A2)/4; // divide by 4 to reduce range to 0-255, this is to arduino zero
         delay(2);
       }
-      analogWrite(DAC0, floor(offset/25)+15); //output the appropriate average offset value, this is from arduino zero
+      analogWrite(DAC0, floor(offset/25)+25); //output the appropriate average offset value, this is from arduino zero
     }
 
   }
@@ -55,27 +53,13 @@ void loop() {
     digitalWrite(13, true); //write digital io pin 13 to true.  This will trip a transistor to ignite the rocket
     
     int force = analogRead(A0)/4; //divide by 4 to reduce range to 0-255, is the output from the load cell
-    int onePressure = analogRead(A1)/4; //reduce range to 0-255, is the output from the pressure transducer
-
-
-    long time = millis();
-    k++;
-    delay(1);
-
-    if (k == 500) { //wait .5 seconds before sending the fire command
-      digitalWrite(12, HIGH); //write pin 12 as high to trigger the launch
-    }
 
     //convert to correct units
     thrust = force * (3.3/(0.1*10*5/25)) / 255;
-    pressure = onePressure;
+    
     //write the data at each timestep to the serial monitor, thereby writing it to the sd card
-    Serial.print(thrust, DEC);
-    Serial.print(", ");
-    Serial.print(pressure, DEC);
-    Serial.print(", ");
-    Serial.print(time);
-    Serial.print(", [lbs], [Pa], [ms]\n");
+    out = String(String(thrust, 3) + ", " + millis());
+    Serial.println(out);
 
   }
 }
