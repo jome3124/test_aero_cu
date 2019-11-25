@@ -23,6 +23,7 @@
 		<Item Name="ScanivalveInit.vi" Type="VI" URL="../subvis/ScanivalveInit.vi"/>
 		<Item Name="Spreadsheet Write.vi" Type="VI" URL="../Spreadsheet Write.vi"/>
 		<Item Name="WindTunnel.vi" Type="VI" URL="../WindTunnel.vi"/>
+		<Item Name="zeroing_timer.vi" Type="VI" URL="../subvis/zeroing_timer.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Clear Errors.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Clear Errors.vi"/>
@@ -70,10 +71,10 @@
 		<Property Name="target.IsRemotePanelSupported" Type="Bool">true</Property>
 		<Property Name="target.RTCPULoadMonitoringEnabled" Type="Bool">true</Property>
 		<Property Name="target.RTDebugWebServerHTTPPort" Type="Int">8001</Property>
-		<Property Name="target.RTTarget.ApplicationPath" Type="Path">/c/ni-rt/startup/startup.rtexe</Property>
+		<Property Name="target.RTTarget.ApplicationPath" Type="Path">/home/lvuser/natinst/bin/startup.rtexe</Property>
 		<Property Name="target.RTTarget.EnableFileSharing" Type="Bool">true</Property>
 		<Property Name="target.RTTarget.IPAccess" Type="Str">+*</Property>
-		<Property Name="target.RTTarget.LaunchAppAtBoot" Type="Bool">false</Property>
+		<Property Name="target.RTTarget.LaunchAppAtBoot" Type="Bool">true</Property>
 		<Property Name="target.RTTarget.VIPath" Type="Path">/home/lvuser/natinst/bin</Property>
 		<Property Name="target.server.app.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="target.server.control.propertiesEnabled" Type="Bool">true</Property>
@@ -202,6 +203,19 @@ AddOutputFilter chunkFilter
 					<Property Name="cRIOModule.SourceModule" Type="Str">false</Property>
 					<Property Name="cRIOModule.SubPanVisitedVersion" Type="Str">0</Property>
 					<Property Name="cRIOModule.TEDSSupport" Type="Str">false</Property>
+				</Item>
+				<Item Name="Mod4" Type="RIO C Series Module">
+					<Property Name="crio.Calibration" Type="Str">1</Property>
+					<Property Name="crio.Location" Type="Str">Slot 4</Property>
+					<Property Name="crio.RequiresValidation" Type="Bool">false</Property>
+					<Property Name="crio.SDcounterSlaveChannelMask" Type="Str">0</Property>
+					<Property Name="crio.SDCounterSlaveMasterSlot" Type="Str">0</Property>
+					<Property Name="crio.SDInputFilter" Type="Str">128</Property>
+					<Property Name="crio.SupportsDynamicRes" Type="Bool">false</Property>
+					<Property Name="crio.Type" Type="Str">NI 9263</Property>
+					<Property Name="cRIOModule.DigitalIOMode" Type="Str">0</Property>
+					<Property Name="cRIOModule.EnableSpecialtyDigital" Type="Str">false</Property>
+					<Property Name="cRIOModule.HotSwapMode" Type="Str">0</Property>
 				</Item>
 			</Item>
 		</Item>
@@ -410,6 +424,70 @@ AddOutputFilter chunkFilter
 			</Item>
 			<Item Name="PID.vi" Type="VI" URL="../subvis/PID.vi"/>
 		</Item>
-		<Item Name="Build Specifications" Type="Build"/>
+		<Item Name="Build Specifications" Type="Build">
+			<Item Name="wind_tunnel_startup" Type="{69A947D5-514E-4E75-818E-69657C0547D8}">
+				<Property Name="App_copyErrors" Type="Bool">true</Property>
+				<Property Name="App_INI_aliasGUID" Type="Str">{00920084-C4BC-4164-A5F1-BCA98F8EDD05}</Property>
+				<Property Name="App_INI_GUID" Type="Str">{60C4E48F-3533-47AB-87C3-29112254F58C}</Property>
+				<Property Name="App_serverConfig.httpPort" Type="Int">8002</Property>
+				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
+				<Property Name="Bld_buildCacheID" Type="Str">{D02A5F02-40C9-42FA-86F8-1E901254F368}</Property>
+				<Property Name="Bld_buildSpecName" Type="Str">wind_tunnel_startup</Property>
+				<Property Name="Bld_excludeInlineSubVIs" Type="Bool">true</Property>
+				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
+				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
+				<Property Name="Bld_localDestDir" Type="Path">../builds/NI_AB_PROJECTNAME/NI_AB_TARGETNAME/wind_tunnel_startup</Property>
+				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
+				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
+				<Property Name="Bld_previewCacheID" Type="Str">{F7935C4D-8EF7-43B2-B97F-878A5F909291}</Property>
+				<Property Name="Bld_targetDestDir" Type="Path">/home/lvuser/natinst/bin</Property>
+				<Property Name="Bld_version.build" Type="Int">3</Property>
+				<Property Name="Bld_version.major" Type="Int">1</Property>
+				<Property Name="Destination[0].destName" Type="Str">startup.rtexe</Property>
+				<Property Name="Destination[0].path" Type="Path">/home/lvuser/natinst/bin/startup.rtexe</Property>
+				<Property Name="Destination[0].path.type" Type="Str">&lt;none&gt;</Property>
+				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
+				<Property Name="Destination[0].type" Type="Str">App</Property>
+				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
+				<Property Name="Destination[1].path" Type="Path">/home/lvuser/natinst/bin/data</Property>
+				<Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
+				<Property Name="DestinationCount" Type="Int">2</Property>
+				<Property Name="Source[0].itemID" Type="Str">{C9E575E9-C969-41B7-8897-2E95FF746DCA}</Property>
+				<Property Name="Source[0].type" Type="Str">Container</Property>
+				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[1].itemID" Type="Ref">/NI-cRIO-9054-01E07AA5/9202_conversions.vi</Property>
+				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
+				<Property Name="Source[1].type" Type="Str">VI</Property>
+				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[2].itemID" Type="Ref">/NI-cRIO-9054-01E07AA5/CRIO_main.vi</Property>
+				<Property Name="Source[2].sourceInclusion" Type="Str">TopLevel</Property>
+				<Property Name="Source[2].type" Type="Str">VI</Property>
+				<Property Name="Source[3].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[3].itemID" Type="Ref">/NI-cRIO-9054-01E07AA5/9237_conversions.vi</Property>
+				<Property Name="Source[3].sourceInclusion" Type="Str">TopLevel</Property>
+				<Property Name="Source[3].type" Type="Str">VI</Property>
+				<Property Name="Source[4].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[4].itemID" Type="Ref">/NI-cRIO-9054-01E07AA5/9239_conversions.vi</Property>
+				<Property Name="Source[4].sourceInclusion" Type="Str">TopLevel</Property>
+				<Property Name="Source[4].type" Type="Str">VI</Property>
+				<Property Name="Source[5].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[5].itemID" Type="Ref">/NI-cRIO-9054-01E07AA5/translate_commands.vi</Property>
+				<Property Name="Source[5].sourceInclusion" Type="Str">TopLevel</Property>
+				<Property Name="Source[5].type" Type="Str">VI</Property>
+				<Property Name="Source[6].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[6].itemID" Type="Ref">/NI-cRIO-9054-01E07AA5/zeroing_computations.vi</Property>
+				<Property Name="Source[6].sourceInclusion" Type="Str">TopLevel</Property>
+				<Property Name="Source[6].type" Type="Str">VI</Property>
+				<Property Name="SourceCount" Type="Int">7</Property>
+				<Property Name="TgtF_enableDebugging" Type="Bool">true</Property>
+				<Property Name="TgtF_fileDescription" Type="Str">wind_tunnel_startup</Property>
+				<Property Name="TgtF_internalName" Type="Str">wind_tunnel_startup</Property>
+				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2019 </Property>
+				<Property Name="TgtF_productName" Type="Str">wind_tunnel_startup</Property>
+				<Property Name="TgtF_targetfileGUID" Type="Str">{6C5C2631-D96E-45E3-BE36-4FADDE8D107A}</Property>
+				<Property Name="TgtF_targetfileName" Type="Str">startup.rtexe</Property>
+				<Property Name="TgtF_versionIndependent" Type="Bool">true</Property>
+			</Item>
+		</Item>
 	</Item>
 </Project>
