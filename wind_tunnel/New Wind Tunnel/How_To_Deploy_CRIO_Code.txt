@@ -1,0 +1,27 @@
+This document describes the steps to deploy code to the CRIO.   This procedure must be followed otherwise
+there appears to be errors in establishing the network stream connection running the code any other way
+outside of the project.
+
+In the project explorer window, right click on Build Specifications
+	Select New < Source Distribution
+	Under the Information Category, choose a Build specification name.  This doesn't really matter
+	Go to Source Files.  Move at least the main file that needs to be run into the Always Included
+		section.  Moving more files in here that are run won't hurt anything.
+	To be safe, go to the Additional Exclusions Category and make sure that the following are unchecked.
+		Exclude files from vi.lib
+		Exclude files from instr.lib
+		Exclude files from user.lib
+
+	You can now select Build at the bottom.
+
+Right click on your newly created source distribution under the Build Specifications tab on the project.
+	Select Deploy.  (Make sure you are connected to the CRIO)
+
+If you left all of the default settings, the new code should be deployed under C:\ni-rt\startup\MainVi.vi
+The following website outlines how to start that code, as well as this general process.
+
+https://knowledge.ni.com/KnowledgeArticleDetails?id=kA00Z000000PAhpSAG&l=en-US
+
+The version of the Wind Tunnel code as of 12/20/19 had a working version of the CPU vi that successfully
+called the code on the CRIO to run and was able to connect.  If necessary, revert the code back to this
+version to see how it was working then.
