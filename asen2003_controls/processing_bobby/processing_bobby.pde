@@ -4,7 +4,8 @@
 Scrollbar hs1, hs2;
 PImage carImg;//, grdImg;
 
-int graphPos = 575, count = 0;
+int count = 0;
+int graphPos;
 int[] lastGraphPos = new int[3];
 int fps = 0;
 float motorLimit = 1;
@@ -30,6 +31,8 @@ String newMax="";
 int Px, Py, Dx, Dy, Ix, Iy;
 int massX, massY, dampX, dampY, maxFX, maxFY;
 int resetX, resetY;
+int tSize;
+boolean colorSwitch = true;
 
 //set up the booleans for the PID boxes
 boolean overProp = false;
@@ -50,12 +53,13 @@ boolean maxInput = false;
 
 void setup()
 {
-  size(1600, 1000, P2D);
+  //size(1600, 1000, P2D);
+  fullScreen();
   textMode(SCREEN);
 
   noStroke();
-  hs1 = new Scrollbar(10, 500, width/2-20, 50, 1);
-  hs2 = new Scrollbar(0, 100, 50, 150, 1);
+  hs1 = new Scrollbar(10, height/4, width/2-width/80, height/35, 1);
+  hs2 = new Scrollbar(0, height/15, height/35, 150, 1);
   carImg = loadImage("newtest.png");
  
   ctrl = new PIDCtrl(10, 0.1, 0.2);
@@ -65,32 +69,44 @@ void setup()
   
   //set up the buttons
   rectColor = color(200);
-  circleColor = color(0);
-  Px = 800;
-  Py = 50;
-  Dx = Px+rectSizeX+50;
+  Px = width/2;
+  Py = height/20;
+  
+  rectSizeX = width/9;
+  rectSizeY = height/17;
+  tSize = rectSizeX/10;
+  graphPos = height/3;
+  
+  Dx = Px+rectSizeX+Py;
   Dy = Py;
   Ix = Px;
-  Iy = Py+rectSizeY+50;
+  Iy = Py+rectSizeY+Py;
   massX = Dx;
   massY = Iy;
   dampX = Px;
-  dampY = Iy+rectSizeY+50;
+  dampY = Iy+rectSizeY+Py;
   maxFX = Dx;
   maxFY = dampY;
   
   //reset button and change gains button
   rectX = Px;
-  rectY = dampY+rectSizeY+50;
+  rectY = dampY+rectSizeY+Py;
   resetX = Dx;
   resetY = rectY;
+  
+  newP = "1";
+  newD = "1";
+  newI = "0";
+  newMass = "0.2";
+  newDamp = "0";
+  newMax = "1";
 }
 
 void draw()
 {  
   
   update(mouseX, mouseY);
-  float carHeight = 50;
+  float carHeight = height/18;
 
   //100 pixels = 1m
   float carPos = hs1.getPos() / 100.0;
@@ -117,15 +133,15 @@ void draw()
   popMatrix();
 
 
-  translate(carPos-24,carHeight-39);
+  translate(carPos-100,carHeight-100);
   image(carImg, 0, 0);
 
   stroke(200,0,0);
-  line(26, 24, 26+ctrl.ComponentP()*100, 24);
+  line(26, 24, 26+ctrl.ComponentP()*10, 24);
   stroke(0,200,0);
-  line(26, 26, 26+ctrl.ComponentI()*100, 26);
+  line(26, 26, 26+ctrl.ComponentI()*10, 26);
   stroke(0,0,255);
-  line(26, 28, 26+ctrl.ComponentD()*100, 28);
+  line(26, 28, 26+ctrl.ComponentD()*10, 28);
   popMatrix();   
 
   stroke(230);
@@ -173,59 +189,59 @@ void draw()
   
     graphPos++;
     if(graphPos>=height)
-      graphPos=575;
+      graphPos=height/3;
   }
   count++;
   
   //change parameters box
   fill(rectColor);
-  rect(rectX, rectY, rectSizeX+20, rectSizeY);
+  rect(rectX, rectY, rectSizeX, rectSizeY);
   fill(circleColor);
-  textSize(32);
-  text("Change Parameters", rectX+10, rectY+50);
+  textSize(tSize);
+  text("Change Parameters", rectX+rectSizeX/40, rectY+rectSizeY/3);
   
   //reset box
   fill(rectColor);
-  rect(resetX, resetY, rectSizeX+20, rectSizeY);
+  rect(resetX, resetY, rectSizeX, rectSizeY);
   fill(circleColor);
-  textSize(32);
-  text("Reset", resetX+10, resetY+50);
+  textSize(tSize);
+  text("Reset", resetX+rectSizeX/40, resetY+rectSizeY/3);
   
   //proportional gain box
   fill(rectColor);
   rect(Px, Py, rectSizeX, rectSizeY);
   fill(circleColor);
-  text("Proportional Gain\n"+newP, Px+10, Py+50);
+  text("Proportional Gain\n"+newP, Px+rectSizeX/40, Py+rectSizeY/3);
   
   //derivative gain box
   fill(rectColor);
   rect(Dx, Dy, rectSizeX, rectSizeY);
   fill(circleColor);
-  text("Derivative Gain\n"+newD, Dx+10, Dy+50);
+  text("Derivative Gain\n"+newD, Dx+rectSizeX/40, Dy+rectSizeY/3);
   
   //integral gain box
   fill(rectColor);
   rect(Ix, Iy, rectSizeX, rectSizeY);
   fill(circleColor);
-  text("Integral Gain\n"+newI, Ix+10, Iy+50);
+  text("Integral Gain\n"+newI, Ix+rectSizeX/40, Iy+rectSizeY/3);
   
   //mass input box
   fill(rectColor);
   rect(massX, massY, rectSizeX, rectSizeY);
   fill(circleColor);
-  text("Mass\n"+newMass, massX+10, massY+50);
+  text("Mass\n"+newMass, massX+rectSizeX/40, massY+rectSizeY/3);
   
   //damping input box
   fill(rectColor);
   rect(dampX, dampY, rectSizeX, rectSizeY);
   fill(circleColor);
-  text("Damping (0-1)\n"+newDamp, dampX+10, dampY+50);
+  text("Damping (0-1)\n"+newDamp, dampX+rectSizeX/40, dampY+rectSizeY/3);
   
   //max force input box
   fill(rectColor);
   rect(maxFX, maxFY, rectSizeX, rectSizeY);
   fill(circleColor);
-  text("Max Force (N)\n"+newMax, maxFX+10, maxFY+50);
+  text("Max Force (N)\n"+newMax, maxFX+rectSizeX/40, maxFY+rectSizeY/3);
 }
 
 
@@ -500,7 +516,14 @@ void mousePressed() {
     }
     
     setProcessVars(p, i, d, mass, damp, maxF);
-    rectColor = 255;
+    
+    if(colorSwitch) {
+      rectColor = 230;
+      colorSwitch = false;
+    } else {
+      rectColor = 200;
+      colorSwitch = true;
+    }
   }
   if (overProp) {
     propInput = true;
