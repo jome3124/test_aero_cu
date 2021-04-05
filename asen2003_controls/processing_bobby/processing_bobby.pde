@@ -62,7 +62,7 @@ void setup()
   hs2 = new Scrollbar(0, height/15, height/35, 150, 1);
   carImg = loadImage("newtest.png");
  
-  ctrl = new PIDCtrl(10, 0.1, 0.2);
+  ctrl = new PIDCtrl(1, 0, 1);
   car  = new Vehicle(.2, 0.0, radians(0));
   
   background(255);
@@ -242,6 +242,8 @@ void draw()
   rect(maxFX, maxFY, rectSizeX, rectSizeY);
   fill(circleColor);
   text("Max Force (N)\n"+newMax, maxFX+rectSizeX/40, maxFY+rectSizeY/3);
+  
+  text("Changes to the parameters on the right will update when you click the update button.\nThe horizontal slider change the position the controller wants to reach.\nThe vertical slider changes the slope to simulate an asymmetrical system.\nRight-clicking on any slider will reset it.\n\nThe graph at the bottom displays system states over time.\nDark grey is the set point, blue is the current position, and green is the motor force.\n\nThe force vectors over the astronaut are the components going into the controller reaction.\nRed is proportional, green is integral, and blue is derivative.\n\nThe motor is a 'super motor' which reaches the desired torque instantly.\nPress the esc key to exit the simulation.", width/2, height/2);
 }
 
 
