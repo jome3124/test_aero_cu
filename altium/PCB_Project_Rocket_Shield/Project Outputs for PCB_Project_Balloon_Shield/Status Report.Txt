@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [PCB_Project_Balloon_Shield.PrjPcb]
+   Generated File[PCB_Balloon_Sheild.TXT]
+   Generated File[PCB_Balloon_Sheild.LDP]
+   Generated File[PCB_Balloon_Sheild.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 1:07:01 PM On 12/4/2019

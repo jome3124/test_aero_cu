@@ -1,0 +1,74 @@
+Removed Pin From Net: NetName=5V Pin=PRES 1-2
+Removed Pin From Net: NetName=GND Pin=PRES 1-4
+Removed Pin From Net: NetName=5V Pin=PRES 2-2
+Removed Pin From Net: NetName=GND Pin=PRES 2-4
+Change Component Designator: OldDesignator= NewDesignator=P1
+Change Component Designator: OldDesignator= NewDesignator=P1
+Added Component: Designator=AD620(HDR2X4)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=AD620(HDR2X4)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=Ext. Power(HDR1X4)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=G1(HDR1X2)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=G2(HDR1X2)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=AD620-6
+Added Pin To Net: NetName=GND Pin=AD620-6
+Added Pin To Net: NetName=NetAD620_1 Pin=AD620-1
+Added Pin To Net: NetName=NetAD620_1 Pin=G1-1
+Added Net: Name=NetAD620_1
+Added Pin To Net: NetName=NetAD620_2 Pin=AD620-2
+Added Pin To Net: NetName=NetAD620_2 Pin=G1-2
+Added Net: Name=NetAD620_2
+Added Pin To Net: NetName=NetAD620_3 Pin=AD620-3
+Added Pin To Net: NetName=NetAD620_3 Pin=PRES 1-3
+Added Net: Name=NetAD620_3
+Added Pin To Net: NetName=NetAD620_4 Pin=AD620-4
+Added Pin To Net: NetName=NetAD620_4 Pin=AD620-4
+Added Pin To Net: NetName=NetAD620_4 Pin=Ext. Power-3
+Added Net: Name=NetAD620_4
+Added Pin To Net: NetName=NetAD620_5 Pin=AD620-5
+Added Pin To Net: NetName=NetAD620_5 Pin=PRES 1-4
+Added Net: Name=NetAD620_5
+Added Pin To Net: NetName=NetAD620_7 Pin=AD620-7
+Added Pin To Net: NetName=NetAD620_7 Pin=AD620-7
+Added Pin To Net: NetName=NetAD620_7 Pin=Ext. Power-4
+Added Net: Name=NetAD620_7
+Added Pin To Net: NetName=NetAD620_8 Pin=AD620-8
+Added Pin To Net: NetName=NetAD620_8 Pin=ANALOG IN-1
+Added Net: Name=NetAD620_8
+Added Pin To Net: NetName=NetExt. Power_1 Pin=Ext. Power-1
+Added Pin To Net: NetName=NetExt. Power_1 Pin=PRES 1-2
+Added Pin To Net: NetName=NetExt. Power_1 Pin=PRES 2-2
+Added Net: Name=NetExt. Power_1
+Added Pin To Net: NetName=NetExt. Power_2 Pin=Ext. Power-2
+Added Pin To Net: NetName=NetExt. Power_2 Pin=PRES 1-1
+Added Pin To Net: NetName=NetExt. Power_2 Pin=PRES 2-1
+Added Net: Name=NetExt. Power_2
+Change Class Name : Old Net Name=Schematic_Balloon_Shield New Net Name=Schematic_Rocket_Shield
+Added Member To Class: ClassName=Schematic_Rocket_Shield Member=Component AD620 Header 4X2
+Added Member To Class: ClassName=Schematic_Rocket_Shield Member=Component AD620 Header 4X2
+Added Member To Class: ClassName=Schematic_Rocket_Shield Member=Component Ext. Power Header 4
+Added Member To Class: ClassName=Schematic_Rocket_Shield Member=Component G1 Header 2
+Added Member To Class: ClassName=Schematic_Rocket_Shield Member=Component G2 Header 2
+Added Member To Class: ClassName=Schematic_Rocket_Shield Member=Component Load Cell 1
+Added Member To Class: ClassName=Schematic_Rocket_Shield Member=Component Load Cell 2
+Added Member To Class: ClassName=Schematic_Rocket_Shield Member=Component P1 eader 8
+Added Member To Class: ClassName=Schematic_Rocket_Shield Member=Component P1 Header 8

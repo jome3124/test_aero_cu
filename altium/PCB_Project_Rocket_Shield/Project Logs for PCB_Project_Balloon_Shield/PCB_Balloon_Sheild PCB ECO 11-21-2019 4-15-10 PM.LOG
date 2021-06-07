@@ -1,0 +1,7 @@
+Removed Pin From Net: NetName=NetP1_8 Pin=P1-8
+Removed Pin From Net: NetName=NetP1_8 Pin=P5-5
+Added Pin To Net: NetName=NetP1_8 Pin=P1-7
+Added Pin To Net: NetName=NetP1_8 Pin=P5-6
+Change Net Name : Old Net Name=NetP1_8 New Net Name=NetP1_7
+Added Member To Class: ClassName=Schematic_Balloon_Shield Member=Component P1 eader 8
+Added Member To Class: ClassName=Schematic_Balloon_Shield Member=Component P2 Header 4

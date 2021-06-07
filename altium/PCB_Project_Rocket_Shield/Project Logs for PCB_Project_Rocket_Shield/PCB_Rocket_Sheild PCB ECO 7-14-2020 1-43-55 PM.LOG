@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=GND Pin=+D9--2
+Removed Pin From Net: NetName=NetLoad Cell 2_4 Pin=P1-4
+Removed Member From Class: ClassName=Schematic_Rocket_Shield Member=+D9-
+Removed Member From Class: ClassName=Schematic_Rocket_Shield Member=R1
+Added Pin To Net: NetName=NetLoad Cell 2_4 Pin=P1-7
+Added Member To Class: ClassName=Schematic_Rocket_Shield Member=Component P1 eader 8

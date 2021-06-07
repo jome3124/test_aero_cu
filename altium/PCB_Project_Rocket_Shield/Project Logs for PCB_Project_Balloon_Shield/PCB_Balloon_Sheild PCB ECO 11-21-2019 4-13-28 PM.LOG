@@ -1,0 +1,44 @@
+Change Component Designator: OldDesignator=+D3- NewDesignator=D3
+Change Component Designator: OldDesignator=+D4- NewDesignator=D4
+Change Component Designator: OldDesignator=+D5- NewDesignator=D5
+Change Component Designator: OldDesignator=+D6- NewDesignator=D6
+Change Component Designator: OldDesignator=+D7- NewDesignator=D7
+Change Component Designator: OldDesignator=+D9- NewDesignator=D9
+Change Component Designator: OldDesignator= NewDesignator=P1
+Change Component Designator: OldDesignator= NewDesignator=R1
+Change Component Designator: OldDesignator=ACCEL NewDesignator=P6
+Change Component Designator: OldDesignator=ANALOG IN NewDesignator=P9
+Change Component Designator: OldDesignator=HUM NewDesignator=P3
+Change Component Designator: OldDesignator=OPENLOG NewDesignator=P5
+Change Component Designator: OldDesignator=POWER NewDesignator=P8
+Change Component Designator: OldDesignator=PRES NewDesignator=P2
+Added Pin To Net: NetName=NetD3_2 Pin=P1-2
+Added Pin To Net: NetName=NetD3_2 Pin=P2-4
+Added Pin To Net: NetName=NetD3_2 Pin=P3-1
+Added Pin To Net: NetName=NetD3_2 Pin=P4-1
+Added Pin To Net: NetName=NetD3_2 Pin=P5-2
+Added Pin To Net: NetName=NetD3_2 Pin=P6-5
+Added Pin To Net: NetName=NetD3_2 Pin=P7-1
+Added Pin To Net: NetName=NetD3_2 Pin=P8-4
+Added Pin To Net: NetName=NetD3_2 Pin=P8-5
+Change Net Name : Old Net Name=NetD3_2 New Net Name=GND
+Added Pin To Net: NetName=5V Pin=P2-2
+Added Pin To Net: NetName=5V Pin=P3-3
+Added Pin To Net: NetName=5V Pin=P4-3
+Added Pin To Net: NetName=5V Pin=P7-3
+Added Pin To Net: NetName=5V Pin=P8-3
+Added Net: Name=5V
+Added Member To Class: ClassName=Schematic_Balloon_Shield Member=Component D3 LED1
+Added Member To Class: ClassName=Schematic_Balloon_Shield Member=Component D4 LED1
+Added Member To Class: ClassName=Schematic_Balloon_Shield Member=Component D5 LED1
+Added Member To Class: ClassName=Schematic_Balloon_Shield Member=Component D6 LED1
+Added Member To Class: ClassName=Schematic_Balloon_Shield Member=Component D7 LED1
+Added Member To Class: ClassName=Schematic_Balloon_Shield Member=Component D9 LED1
+Added Member To Class: ClassName=Schematic_Balloon_Shield Member=Component P1 eader 8
+Added Member To Class: ClassName=Schematic_Balloon_Shield Member=Component P2 Header 4
+Added Member To Class: ClassName=Schematic_Balloon_Shield Member=Component P3 Header 3
+Added Member To Class: ClassName=Schematic_Balloon_Shield Member=Component P5 Header 6
+Added Member To Class: ClassName=Schematic_Balloon_Shield Member=Component P8 Header 6
+Added Member To Class: ClassName=Schematic_Balloon_Shield Member=Component P9 Header 6
+Added Member To Class: ClassName=Schematic_Balloon_Shield Member=Component R1 
+Added Room: Name=Schematic_Balloon_Shield

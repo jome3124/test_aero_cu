@@ -1,0 +1,26 @@
+Added Component: Designator=G1(AXIAL-0.3)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "AXIAL-0.3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "330K"; VariantName = "[No Variations]"
+Added Component: Designator=G2(AXIAL-0.3)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "AXIAL-0.3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "330K"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetAD620_8 Pin=G1-1
+Added Pin To Net: NetName=NetAD620_1 Pin=G1-2
+Added Pin To Net: NetName=NetAD620_2_8 Pin=G2-1
+Added Pin To Net: NetName=NetAD620_2_1 Pin=G2-2
+Added Member To Class: ClassName=Schematic_Rocket_Shield Member=Component AD620 SW-DIP4
+Added Member To Class: ClassName=Schematic_Rocket_Shield Member=Component G1 
+Added Member To Class: ClassName=Schematic_Rocket_Shield Member=Component G2 
+Added Member To Class: ClassName=Schematic_Rocket_Shield Member=Component P1 eader 8

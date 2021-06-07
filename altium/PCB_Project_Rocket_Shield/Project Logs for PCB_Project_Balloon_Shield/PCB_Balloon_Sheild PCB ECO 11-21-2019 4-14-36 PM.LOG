@@ -1,0 +1,6 @@
+Added Pin To Net: NetName=NetP1_8 Pin=P1-8
+Added Pin To Net: NetName=NetP1_8 Pin=P5-5
+Added Net: Name=NetP1_8
+Added Member To Class: ClassName=Schematic_Balloon_Shield Member=Component P1 eader 8
+Added Member To Class: ClassName=Schematic_Balloon_Shield Member=Component P2 Header 4
+Added Member To Class: ClassName=Schematic_Balloon_Shield Member=Component P6 Header 6

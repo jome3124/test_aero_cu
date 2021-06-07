@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=NetD9_1 Pin=D9-1
+Removed Pin From Net: NetName=GND Pin=D9-2
+Change Component Designator: OldDesignator=OPENLOG NewDesignator=P5
+Added Member To Class: ClassName=Schematic_Balloon_Shield Member=Component P1 eader 8
+Added Member To Class: ClassName=Schematic_Balloon_Shield Member=Component P2 Header 4
+Added Room: Name=Schematic_Balloon_Shield

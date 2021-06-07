@@ -1,0 +1,31 @@
+Added Component: Designator=Ext. Power(HDR1X2)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=Press1(HDR1X3)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=Press2(HDR1X3)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetExt. Power_1 Pin=Ext. Power-1
+Added Pin To Net: NetName=GND Pin=Ext. Power-2
+Added Pin To Net: NetName=NetExt. Power_1 Pin=Press1-1
+Added Pin To Net: NetName=GND Pin=Press1-2
+Added Pin To Net: NetName=NetExt. Power_1 Pin=Press2-1
+Added Pin To Net: NetName=GND Pin=Press2-2
+Added Pin To Net: NetName=NetANALOG IN_1 Pin=ANALOG IN-1
+Added Pin To Net: NetName=NetANALOG IN_1 Pin=Press1-3
+Added Net: Name=NetANALOG IN_1
+Added Pin To Net: NetName=NetANALOG IN_2 Pin=ANALOG IN-2
+Added Pin To Net: NetName=NetANALOG IN_2 Pin=Press2-3
+Added Net: Name=NetANALOG IN_2
+Added Member To Class: ClassName=Schematic_Rocket_Shield Member=Component Ext. Power Header 2
+Added Member To Class: ClassName=Schematic_Rocket_Shield Member=Component P1 eader 8
+Added Member To Class: ClassName=Schematic_Rocket_Shield Member=Component Press1 Header 3
+Added Member To Class: ClassName=Schematic_Rocket_Shield Member=Component Press2 Header 3
